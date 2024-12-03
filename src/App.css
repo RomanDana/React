@@ -1,0 +1,95 @@
+/* Estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+body {
+  background-color: #f4f4f4af;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0c2c6b;
+  padding: 10px 20px;
+  color: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+}
+.categories {
+  font-size: 20px;
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+.categories li {
+  cursor: pointer;
+}
+.categories li:hover {
+  text-decoration: underline;
+}
+.brandname{
+  font-size: 25px;
+}
+
+/* CartWidget */
+.cartWidget {
+  position: relative;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+.cartWidget {
+  background-color: #0c2c6b;
+  border-radius: 50%;
+  padding: 10px;
+}
+.cartWidget:hover{
+  transform: scale(1.2, 1.2);
+  transition: all 0.3s;
+}
+.notificacion {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ItemListContainer */
+.item-list-container {
+  margin-top: 150px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%; 
+  color: rgb(255, 255, 255);
+  border: double 8px ;
+  background-color: #0c2c6b;
+}
+
+
+
