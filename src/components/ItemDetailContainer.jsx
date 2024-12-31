@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 
 function ItemDetailContainer() {
   const [item, setItem] = useState(null);
-  const { itemId } = useParams();
+  const { itemId } = useParams(); 
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${itemId}`)
@@ -16,4 +16,5 @@ function ItemDetailContainer() {
 }
 
 export default ItemDetailContainer;
+
 

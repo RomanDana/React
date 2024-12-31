@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import ItemList from './itemList';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
+import ItemList from './ItemList';
 
 function ItemListContainer() {
   const [items, setItems] = useState([]);
-  const { categoryId } = useParams();
+  const { categoryId } = useParams(); 
 
   useEffect(() => {
     const baseUrl = 'https://fakestoreapi.com/products';
@@ -19,6 +19,7 @@ function ItemListContainer() {
 }
 
 export default ItemListContainer;
+
 
 
 
