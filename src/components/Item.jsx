@@ -9,9 +9,9 @@ function Item({ item }) {
       <Card.Img variant="top" src={item.image} alt={item.title} className="card-img-top" />
       <Card.Body>
         <Card.Title>{item.title}</Card.Title>
-        <Card.Text>{item.category}</Card.Text>
+        <Card.Text className="truncate-description">{item.category}:</Card.Text><Card.Text>{item.name}</Card.Text>
         <Card.Text className="truncate-description">{item.description}</Card.Text>
-        <Card.Text>${item.price}</Card.Text>
+        <Card.Text>precio: ${item.price}</Card.Text>
         <Button variant="primary" as={Link} to={`/item/${item.id}`}>
           Detalles
         </Button>

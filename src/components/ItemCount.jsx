@@ -1,24 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
+import { CartContext } from '../context/CartContext';
+import { toast } from 'react-toastify';
 
-function ItemCount() {
+function ItemCount({ item }) {
   const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    console.log('Se ejecutó el efecto.');
-
-    return () => {
-      console.log('Se desmontó el componente.');
-    };
-  }, [count]);
-
+  const { addToCart } = useContext(CartContext);
   const handleIncrement = () => {
     setCount(count + 1);
   };
-
   const handleDecrement = () => {
     if (count > 0) {
       setCount(count - 1);
+    }
+  };
+  const handleAddToCart = () => {
+    if (count > 0) {
+      addToCart({ ...item, quantity: count });
+      setCount(0);
+    } else {
+      toast.error('Debes seleccionar al menos 1 unidad.', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
   };
 
@@ -30,6 +38,9 @@ function ItemCount() {
       </Button>
       <Button style={{ backgroundColor: '#0c2c6b' }} onClick={handleIncrement} className="ms-2">
         +
+      </Button>
+      <Button style={{ backgroundColor: '#0c2c6b' }} onClick={handleAddToCart} className="ms-2">
+        Agregar al carrito
       </Button>
     </div>
   );
